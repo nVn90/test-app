@@ -1,8 +1,6 @@
 import { useState } from "react";
 import "./App.css";
-import ReactGA from 'react-ga';
-const TRACKING_ID = "UA-SOMETHING"; // OUR_TRACKING_ID
-ReactGA.initialize(TRACKING_ID);
+import gtag from "ga-gtag";
 
 function App() {
   const initialState = {
@@ -11,6 +9,13 @@ function App() {
     age: "",
     hobby: "",
   };
+
+  function handleFormData() {
+    gtag("event", "form_data", {
+      values: values,
+    });
+  }
+
   const [values, setValues] = useState(initialState);
 
   const { name, email, age, hobby } = values;
@@ -24,6 +29,7 @@ function App() {
     e.preventDefault();
     console.log("values submited::", values);
     setValues(initialState);
+    handleFormData();
   };
 
   console.log(values);
