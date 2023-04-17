@@ -1,5 +1,8 @@
 import { useState } from "react";
 import "./App.css";
+import ReactGA from 'react-ga';
+const TRACKING_ID = "UA-SOMETHING"; // OUR_TRACKING_ID
+ReactGA.initialize(TRACKING_ID);
 
 function App() {
   const initialState = {
