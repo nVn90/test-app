@@ -11,8 +11,13 @@ function App() {
   };
 
   function handleFormData() {
+    // gtag("event", "form_data", {
+    //   'values': values,
+    // });
     gtag("event", "form_data", {
-      values: values,
+      event_label: "My Form",
+      event_category: "Form",
+      event_data: values,
     });
   }
 
@@ -27,9 +32,9 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    handleFormData();
     console.log("values submited::", values);
     setValues(initialState);
-    handleFormData();
   };
 
   console.log(values);
