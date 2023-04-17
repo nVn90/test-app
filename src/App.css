@@ -2,6 +2,13 @@
   text-align: center;
 }
 
+.App form {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
