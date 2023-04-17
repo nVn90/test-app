@@ -11,11 +11,11 @@ function App() {
   };
 
 
-  function handleFormData() {
-    gtag('event', 'form_data', {
-      'event_data': JSON.stringify(values)
-    });
-  }
+  // function handleFormData() {
+  //   gtag('event', 'form_data', {
+  //     'event_data': JSON.stringify(values)
+  //   });
+  // }
 
   const [values, setValues] = useState(initialState);
 
@@ -28,7 +28,7 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    handleFormData();
+    // handleFormData();
     console.log("values submited::", values);
     setValues(initialState);
   };
