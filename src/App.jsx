@@ -10,14 +10,10 @@ function App() {
     hobby: "",
   };
 
+
   function handleFormData() {
-    // gtag("event", "form_data", {
-    //   'values': values,
-    // });
-    gtag("event", "form_data", {
-      event_label: "My Form",
-      event_category: "Form",
-      event_data: values,
+    gtag('event', 'form_data', {
+      'event_data': JSON.stringify(values)
     });
   }
 
